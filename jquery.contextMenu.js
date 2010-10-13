@@ -29,7 +29,7 @@ $("selector").contextMenu({
 jQuery.fn.contextMenu = function ( actions ) {
     $(document).bind("contextmenu",function(e){ return false; }); // yuk :)
     
-    var menu = $('<div id="contextMenu"></div>').appendTo('body'),
+    var menu = $('<div id="contextMenu"></div>').hide().appendTo('body'),
         active_element = null; // last clicked element that responds with contextMenu
 
     $.each(actions, function(me, item_options){

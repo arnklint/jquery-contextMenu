@@ -24,7 +24,7 @@ Simple, yet powerful.
 
 In the example above, when a user clicks on the first context menu item, the original element that launched the context menu is passed in as the only argument for the click callback. Thus, you can do this:
 
-    $("selector").contextMenu({
+    $(".targets").contextMenu({
         'Context Menu Item 1': {
             click: clickFirstItem,
             class: "menu-item-1" 

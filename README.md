@@ -4,19 +4,19 @@ jQuery plugin that shows a custom context menu when right clicking something. Su
 
 ## Basic calling syntax: 
 
-  $("selector").contextMenu({   // selector is for the elements that should launch our context menu.
-      'Context Menu Item 1': {
-          click: function(element){  // element is the jquery obj clicked on when context menu launched
-              alert('Menu item 1 clicked');
-              element.css({backgroundColor: 'pink'}); // just as example the clicked items backgorund is changed
-          },
-          class: "menu-item-1" // a custom css class for this menu item (usable for styling)
-      },
-      'Second menu item': {
-          click: function(element){ alert('second clicked'); },
-          class: "second-menu-item"
-      }
-  });
+    $("selector").contextMenu({   // selector is for the elements that should launch our context menu.
+        'Context Menu Item 1': {
+            click: function(element){  // element is the jquery obj clicked on when context menu launched
+                alert('Menu item 1 clicked');
+                element.css({backgroundColor: 'pink'}); // just as example the clicked items backgorund is changed
+            },
+            class: "menu-item-1" // a custom css class for this menu item (usable for styling)
+        },
+        'Second menu item': {
+            click: function(element){ alert('second clicked'); },
+            class: "second-menu-item"
+        }
+    });
 
 Simple, yet powerful. 
 

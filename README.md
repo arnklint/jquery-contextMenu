@@ -20,6 +20,21 @@ jQuery plugin that shows a custom context menu when right clicking something. Su
 
 Simple, yet powerful. 
 
+## Callbacks
+
+In the example above, when a user clicks on the first context menu item, the original element that launched the context menu is passed in as the only argument for the click callback. Thus, you can do this:
+
+    $("selector").contextMenu({
+        'Context Menu Item 1': {
+            click: clickFirstItem,
+            class: "menu-item-1" 
+        }
+    });
+    
+    clickFirstItem = function(element){  
+        alert(element.attr('id'));
+    }
+
 ## Markup, when styling it
 
     <ul id="contextMenu">

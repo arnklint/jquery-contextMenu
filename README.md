@@ -18,11 +18,22 @@ jQuery plugin that shows a custom context menu when right clicking something. Su
         }
     });
 
-Simple, yet powerful. 
+## Markup, when styling it
+
+    <ul id="contextMenu">
+      <li class="menu-item-1">Context Menu Item 1</li>
+      <li class="second-menu-item">Second menu item</li>
+    </ul>
+    
+Style it however you want with CSS, it does not come with any predefined styles so thats completely up to you.
 
 ## Callbacks
 
-In the example above, when a user clicks on the first context menu item, the original element that launched the context menu is passed in as the only argument for the click callback. Thus, you can do this:
+In the example above, when a user clicks on the first context menu item, the original element that launched the context menu is passed in as the only argument for the click callback. Thus, we can make the clicked element green by doing this: 
+
+    clickFirstItem = function(element){  
+        element.css({color: "green"});
+    }
 
     $(".targets").contextMenu({
         'Context Menu Item 1': {
@@ -30,17 +41,8 @@ In the example above, when a user clicks on the first context menu item, the ori
             class: "menu-item-1" 
         }
     });
-    
-    clickFirstItem = function(element){  
-        alert(element.attr('id'));
-    }
 
-## Markup, when styling it
-
-    <ul id="contextMenu">
-      <li class="menu-item-1">Context Menu Item 1</li>
-      <li class="second-menu-item">Second menu item</li>
-    </ul>
+Simple, yet powerful. 
 
 
 ## License

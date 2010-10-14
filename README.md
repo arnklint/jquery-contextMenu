@@ -20,6 +20,13 @@ jQuery plugin that shows a custom context menu when right clicking something. Su
 
 Simple, yet powerful. 
 
+## Markup, when styling it
+
+    <ul id="contextMenu">
+      <li class="menu-item-1">Context Menu Item 1</li>
+      <li class="second-menu-item">Second menu item</li>
+    </ul>
+
 
 ## License
 

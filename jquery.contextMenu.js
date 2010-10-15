@@ -32,6 +32,10 @@ jQuery.fn.contextMenu = function ( name, actions ) {
     var menu = $('<ul id="'+name+'" class="context-menu"></ul>').hide().appendTo('body'),
         active_element = null; // last clicked element that responds with contextMenu
 
+    var hide_menu = function(){
+        $('.context-menu').hide()
+    }
+
     $.each(actions, function(me, item_options){
         $('<li class="'+item_options.class+'">'+me+'</li>')
             .appendTo(menu)
@@ -41,11 +45,12 @@ jQuery.fn.contextMenu = function ( name, actions ) {
     });
 
     $('body').click(function() {
-        menu.hide() //Hide the menus if visible
+         hide_menu(); //Hide the menus if visible
     });
 
     return $(this).live('mousedown', function(e){
         if( e.which == 3 ){
+            hide_menu(); 
             menu.show()
                 .css({ 
                     position: 'absolute', 

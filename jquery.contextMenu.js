@@ -34,6 +34,7 @@ jQuery.fn.contextMenu = function ( name, actions ) {
 
     return $(this).live('mousedown', function(e){
         if( e.which == 3 ){
+            active_element = $(this); // set clicked element
             hide_menu(); 
             menu.show()
                 .css({ 

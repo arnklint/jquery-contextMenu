@@ -26,10 +26,10 @@ $("selector").contextMenu({
  * These are the options you can pass into the plugin. No fancy schmancy, but KISS. 
  *  
  */
-jQuery.fn.contextMenu = function ( actions ) {
+jQuery.fn.contextMenu = function ( name, actions ) {
     $(document).bind("contextmenu",function(e){ return false; }); // yuk :)
     
-    var menu = $('<ul id="contextMenu"></ul>').hide().appendTo('body'),
+    var menu = $('<ul id="'+name+'" class="context-menu"></ul>').hide().appendTo('body'),
         active_element = null; // last clicked element that responds with contextMenu
 
     $.each(actions, function(me, item_options){
@@ -49,8 +49,8 @@ jQuery.fn.contextMenu = function ( actions ) {
             menu.show()
                 .css({ 
                     position: 'absolute', 
-                    top: $(this).position().top, 
-                    left: $(this).position().left, 
+                    top: e.pageY, 
+                    left: e.pageX, 
                     zIndex: 1000 
                 });
             e.preventDefault();

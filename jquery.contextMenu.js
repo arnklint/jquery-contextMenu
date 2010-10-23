@@ -28,6 +28,7 @@ jQuery.fn.contextMenu = function ( name, actions, options ) {
             .appendTo(menu)
             .bind('click', function(e){
                 item_options.click(active_element);
+                e.preventDefault();
             });
     });
 
@@ -39,7 +40,7 @@ jQuery.fn.contextMenu = function ( name, actions, options ) {
         active_element = $(this); // set clicked element
         hide_menu(); 
         menu.show()
-            .css({ 
+            .css({
                 position: 'absolute', 
                 top: e.pageY, 
                 left: e.pageX, 

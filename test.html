@@ -90,11 +90,11 @@
                 alert('Menu item 1 clicked');
                 element.css({backgroundColor: 'pink'}); // just as example the clicked items backgorund is changed
             },
-            class: "menu-item-1" // a custom css class for this menu item (usable for styling)
+            klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
         },
         'Second menu item': {
             click: function(element){ alert('second clicked'); },
-            class: "second-menu-item"
+            klass: "second-menu-item"
         }
     });
     
@@ -104,11 +104,11 @@
             click: function(element){  // element is the jquery obj clicked on when context menu launched
                 element.css({backgroundColor: 'green', color: 'black'})
             },
-            class: "menu-item-1" // a custom css class for this menu item (usable for styling)
+            klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
         },
         'Make me big!': {
             click: function(element){ element.css({fontSize: '25px'}) },
-            class: "second-menu-item"
+            klass: "second-menu-item"
         }
     }, {disable_native_context_menu: true});
   });

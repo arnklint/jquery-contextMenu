@@ -24,7 +24,7 @@ jQuery.fn.contextMenu = function ( name, actions, options ) {
     }
 
     $.each(actions, function(me, item_options){
-        $('<li class="'+item_options.class+'"><a href="#">'+me+'</a></li>')
+        $('<li class="'+item_options.klass+'"><a href="#">'+me+'</a></li>')
             .appendTo(menu)
             .bind('click', function(e){
                 item_options.click(active_element);

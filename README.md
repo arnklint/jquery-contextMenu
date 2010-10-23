@@ -8,7 +8,11 @@ The best way to try it out is to try the demo in test.html.
 
     // it basically takes to parameters, a name that becomes the context menu´s id and an object with the context menu items. 
 
-    $("selector").contextMenu('context-menu-1', {   // selector is for the elements that should launch our context menu.
+    $(selector for elements that will launch the menu).contextMenu( context_menu_id, actions, options );
+
+A complete example:
+
+    $("selector").contextMenu('context-menu-1', { 
         'Context Menu Item 1': {
             click: function(element){  // element is the jquery obj clicked on when context menu launched
                 alert('Menu item 1 clicked');
@@ -21,6 +25,10 @@ The best way to try it out is to try the demo in test.html.
             class: "custom-class2"
         }
     });
+    
+Oh, added in version 1.2: one single option to disable the browsers native context menu no matter where you click: 
+
+  $('selector').contextMenu('context-menu-name', actions, { disable_native_context_menu: true })
 
 ## Markup, and css
 

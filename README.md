@@ -18,11 +18,11 @@ A complete example:
                 alert('Menu item 1 clicked');
                 element.css({backgroundColor: 'pink'}); // just as example the clicked items backgorund is changed
             },
-            class: "custom-class1" // a custom css class for this menu item (usable for styling)
+            klass: "custom-class1" // a custom css class for this menu item (usable for styling)
         },
         'Second menu item': {
             click: function(element){ alert('second clicked'); },
-            class: "custom-class2"
+            klass: "custom-class2"
         }
     });
     
@@ -52,7 +52,7 @@ In the example above, when a user clicks on the first context menu item, the ori
     $(".targets").contextMenu({
         'Context Menu Item 1': {
             click: clickFirstItem,
-            class: "menu-item-1" 
+            klass: "menu-item-1" 
         }
     });
 

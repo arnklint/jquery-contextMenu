@@ -23,13 +23,16 @@ jQuery.fn.contextMenu = function ( name, actions, options ) {
         $(document).bind('contextmenu',function(e){hide_menu();e.preventDefault()});
     }
 
-    $.each(actions, function(me, item_options){
-        $('<li class="'+item_options.klass+'"><a href="#">'+me+'</a></li>')
-            .appendTo(menu)
-            .bind('click', function(e){
-                item_options.click(active_element);
-                e.preventDefault();
-            });
+    $.each(actions, function(me, item_options) {
+        var menuItem = $('<li><a href="#">'+me+'</a></li>');
+
+        if (item_options.klass)
+          menuItem.attr("class", item_options.klass);
+
+        menuItem.appendTo(menu).bind('click', function(e) {
+            item_options.click(active_element);
+            e.preventDefault();
+        });
     });
 
     $('body').click(function() {

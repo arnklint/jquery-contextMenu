@@ -8,6 +8,7 @@
  *  
  */
 jQuery.fn.contextMenu = function ( name, actions, options ) {
+
     var me = this,
         menu = $('<ul id="'+name+'" class="context-menu"></ul>').hide().appendTo('body'),
         active_element = null, // last clicked element that responds with contextMenu
@@ -19,9 +20,11 @@ jQuery.fn.contextMenu = function ( name, actions, options ) {
         },
         options = $.extend(default_options, options);
     
-    if(options.disable_native_context_menu) {
-        $(document).bind('contextmenu',function(e){hide_menu();e.preventDefault()});
-    }
+    $(document).bind('contextmenu', function(e) {
+      if (options.disable_native_context_menu)
+        e.preventDefault();
+      hide_menu();
+    });
 
     $.each(actions, function(me, item_options) {
         var menuItem = $('<li><a href="#">'+me+'</a></li>');

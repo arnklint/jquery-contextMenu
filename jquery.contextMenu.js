@@ -4,10 +4,10 @@
  * Released into the public domain
  * Date: Jan 14, 2011
  * @author Jonas Arnklint
- * @version 1.2
+ * @author Evan Worley
+ * @version 1.3
  *  
  */
-
 // Making a local '$' alias of jQuery to support jQuery.noConflict
 (function($) {
   jQuery.fn.contextMenu = function ( name, actions, options ) {
@@ -15,7 +15,10 @@
           menu = $('<ul id="'+name+'" class="context-menu"></ul>').hide().appendTo('body'),
           active_element = null, // last clicked element that responds with contextMenu
           hide_menu = function(){
-              $('.context-menu').hide()
+            $('.context-menu').each(function() {
+              $(this).trigger("closed");
+              $(this).hide();
+            });
           }, 
           default_options = {
               disable_native_context_menu: false // disables the native contextmenu everywhere you click
@@ -45,8 +48,22 @@
       });
 
       return me.bind('contextmenu', function(e){
-          active_element = $(this); // set clicked element
+          // Hide any existing context menus
           hide_menu(); 
+
+          active_element = $(this); // set clicked element
+
+          if (options.showMenu) {
+            options.showMenu.call(menu, active_element);
+          }
+
+          // Bind to the closed event if there is a hideMenu handler specified
+          if (options.hideMenu) {
+            menu.bind("closed", function() {
+              options.hideMenu.call(menu, active_element);
+            });
+          }
+
           menu.show()
               .css({
                   position: 'absolute', 

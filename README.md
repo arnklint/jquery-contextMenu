@@ -6,9 +6,8 @@ The best way to try it out is to try a demo is to go [here](http://arnklint.gith
 
 ## Basic calling syntax: 
 
-    // it basically takes to parameters, a name that becomes the context menu´s id and an object with the context menu items. 
-
-    $(selector for elements that will launch the menu).contextMenu( context_menu_id, actions, options );
+    // context_menu_id becomes the id of the context menu, context_menu_items contains the items to be shown in the menu, and options is a set of options for this menu
+    $(selector for elements that will launch the menu).contextMenu( context_menu_id, context_menu_items, options );
 
 A complete example:
 
@@ -23,12 +22,14 @@ A complete example:
         'Second menu item': {
             click: function(element){ alert('second clicked'); },
             klass: "custom-class2"
+        },
+        {
+          disable_native_context_menu: true,
+          showMenu: function() { alert("Showing menu"); },
+          hideMenu: function() { alert("Hiding menu"); }
         }
     });
     
-Oh, added in version 1.2: one single option to disable the browsers native context menu no matter where you click: 
-
-  $('selector').contextMenu('context-menu-name', actions, { disable_native_context_menu: true })
 
 ## Markup, and css
 
@@ -58,6 +59,16 @@ In the example above, when a user clicks on the first context menu item, the ori
 
 Simple, yet powerful. 
 
+## Version History
+  ### Version 1.3
+    Added callbacks showMenu and hideMenu to allow the caller to perform actions when the menu is shown and hidden (such as custom styling of the menu target)
+  ### Version 1.2
+    Added an option to disable the browsers native context menu no matter where you click: 
+    $('selector').contextMenu('context-menu-name', actions, { disable_native_context_menu: true })
+
+CONTRIBUTORS:
+Jonas Arnklint https://github.com/arnklint
+Evan Worley https://github.com/evanworley
 
 ## License
 

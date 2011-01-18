@@ -4,9 +4,23 @@
     <title>jQuery Context Menu Demo</title>
     
     <style type="text/css" media="screen">
-      /* Our context menus */
-      
-      /* all context menus has this class */
+      html, body {
+        height: 100%;
+      }
+
+      body {
+        font-family: 'lucida grande', tahoma, verdana;
+        font-size: 11px;
+      }
+
+      ul {
+        list-style-type: none;
+        list-style-position: inside;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* all context menus have this class */
       .context-menu {
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
@@ -15,8 +29,9 @@
         background-color: #f2f2f2;
         border: 1px solid #999;
         
-        list-style: none;
-        margin: 0; padding: 0;        
+        list-style-type: none;
+        margin: 0; 
+        padding: 0;
       }
       .context-menu a {
         display: block;
@@ -29,92 +44,119 @@
         color: white;
       }
       
-      
       /* second context menu */
       #context-menu-2 {
         border: 1px solid #333;
         background-color: orange;
-        margin: 0; padding: 0;
+        margin: 0; 
+        padding: 0;
       }
       
-      
-      
-      /* demo styles */ 
-      html, body {
-        height: 100%;
-      }
-      body {
-        font-family: 'lucida grande', tahoma, verdana;
-        font-size: 11px;
-      }
-      .target1 {
-        background-color: blue;
+
+      .target1, .target2 li, .target3 li {
+        background-color: #ccc;
+        color: #333;
         border: 1px solid black;
+      }
+
+      .target1 {
         width: 100px;
+        padding: 2px;
       }
-      .target2 li{
+
+      .target2 li, .target3 li {
         margin-top: 5px;
-        background-color: pink;
-        border: 1px solid red;
+        padding: 2px;
       }
-      
+
+      .target1 li.green, .target2 li.green, .target3 li.green {
+        background-color: green;
+        color: #fff;
+      }
+
+      .big-font {
+        font-size: 25px;
+      }
     </style>
   </head>
   <body>
-    
     <h1>jQuery Context Menu Demo</h1>
+
     <h2>Example 1</h2>
-    <p>Lets look at a single div as a target</p>
-    
-    <p>Note that the native context menu is disabled by passing {disable_native_context_menu: true} as the options hash and last argument of the plugin. The native context menu is enabled by default.</p>
-    
-    <div class="target1">Click me!</div>
+    <p>
+      Context menu for a single div. Note that the native context menu is disabled by 
+      passing {disable_native_context_menu: true} as the options hash and last argument 
+      of the plugin. The native context menu is enabled by default.
+    </p>
+    <div class="target1">Right-click me!</div>
     
     <h2>Example 2 - multiple targets and a different context menu</h2>
-    <p>You can use the same syntax, but use any other selector to target multiple elements with the same context menu</p>
-    
+    <p>
+      You can use the same syntax, but use any other selector to target multiple elements 
+      with the same context menu.
+    </p>
     <ul class="target2">
-      <li>Click me!</li>
-      <li>Click me!</li>
-      <li>Click me!</li>            
+      <li>Right click me!</li>
+      <li>Right click me!</li>
+      <li>Right click me!</li>            
+    </ul>
+
+    <h2>Example 3 - highlight current target</h2>
+    <p>
+      You can use the showMenu and hideMenu options to highlight the current context menu target.
+    </p>
+    <ul class="target3">
+      <li>Right click me!</li>
+      <li>Right click me!</li>
+      <li>Right click me!</li>            
     </ul>
     
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" 
+            charset="utf-8"></script>
     <script src="jquery.contextMenu.js" type="text/javascript" charset="utf-8"></script>
     
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function(){
-    
-    $('.target1').contextMenu('context-menu-1', {
-        'Context Menu Item 1': {
-            click: function(element){  // element is the jquery obj clicked on when context menu launched
-                alert('Menu item 1 clicked');
-                element.css({backgroundColor: 'pink'}); // just as example the clicked items backgorund is changed
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function(){
+        
+        $('.target1').contextMenu('context-menu-1', {
+            'Context Menu Item 1': {
+                click: function(element) {  // element is the jquery obj clicked on when context menu launched
+                    alert('Menu item 1 clicked');
+                },
+                klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
             },
-            klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
-        },
-        'Second menu item': {
-            click: function(element){ alert('second clicked'); },
-            klass: "second-menu-item"
-        }
-    });
-    
-    
-    $('.target2 li').contextMenu('context-menu-2', {
-        'Color me green!': {
-            click: function(element){  // element is the jquery obj clicked on when context menu launched
-                element.css({backgroundColor: 'green', color: 'black'})
+            'Context Menu Item 2': {
+                click: function(element){ alert('second clicked'); },
+                klass: "second-menu-item"
+            }
+        });
+        
+        $('.target2 li').contextMenu('context-menu-2', {
+            'Color me green!': {
+                click: function(element) {  // element is the jquery obj clicked on when context menu launched
+                    element.addClass('green');
+                },
+                klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
             },
-            klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
-        },
-        'Make me big!': {
-            click: function(element){ element.css({fontSize: '25px'}) },
-            klass: "second-menu-item"
-        }
-    }, {disable_native_context_menu: true});
-  });
-</script>
+            'Make me big!': {
+                click: function(element) { element.addClass('big-font') },
+                klass: "second-menu-item"
+            }
+        }, { disable_native_context_menu: true, }
+        );
+
+        $('.target3 li').contextMenu('context-menu-2', {
+            'Make me big!': {
+                click: function(element) { element.addClass('big-font') },
+                klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
+            },
+        }, {
+          disable_native_context_menu: true,
+          showMenu: function(element) { element.addClass('green'); },
+          hideMenu: function(element) { element.removeClass('green'); },
+        });
+      });
+    </script>
 
   </body>
 </html>

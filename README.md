@@ -60,15 +60,18 @@ In the example above, when a user clicks on the first context menu item, the ori
 Simple, yet powerful. 
 
 ## Version History
-  ### Version 1.3
-    Added callbacks showMenu and hideMenu to allow the caller to perform actions when the menu is shown and hidden (such as custom styling of the menu target)
-  ### Version 1.2
+  Version 1.3
+    Added callbacks showMenu and hideMenu to allow the caller to perform actions when the menu is shown 
+    and hidden (such as custom styling of the menu target)
+
+  Version 1.2
     Added an option to disable the browsers native context menu no matter where you click: 
     $('selector').contextMenu('context-menu-name', actions, { disable_native_context_menu: true })
 
-CONTRIBUTORS:
-Jonas Arnklint https://github.com/arnklint
-Evan Worley https://github.com/evanworley
+## CONTRIBUTORS:
+  Jonas Arnklint https://github.com/arnklint
+
+  Evan Worley https://github.com/evanworley
 
 ## License
 

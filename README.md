@@ -70,7 +70,6 @@ Simple, yet powerful.
 
 ## CONTRIBUTORS:
   Jonas Arnklint [https://github.com/arnklint](https://github.com/arnklint)
-
   Evan Worley [https://github.com/evanworley](https://github.com/evanworley)
 
 ## License

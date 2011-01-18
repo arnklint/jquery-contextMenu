@@ -4,7 +4,6 @@
  * Released into the public domain
  * Date: Jan 14, 2011
  * @author Jonas Arnklint
- * @author Evan Worley
  * @version 1.3
  *  
  */

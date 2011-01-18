@@ -69,9 +69,9 @@ Simple, yet powerful.
     $('selector').contextMenu('context-menu-name', actions, { disable_native_context_menu: true })
 
 ## CONTRIBUTORS:
-  Jonas Arnklint https://github.com/arnklint
+  Jonas Arnklint [https://github.com/arnklint](https://github.com/arnklint)
 
-  Evan Worley https://github.com/evanworley
+  Evan Worley [https://github.com/evanworley](https://github.com/evanworley)
 
 ## License
 

@@ -1,200 +1,191 @@
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-	<title>jQuery Context Menu</title>
-	
-	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #f2f2f2;
-		  font-family: Helvetica, Arial;
-  		color: #333;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.0em; color: #f4c05e; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #0066cc; }
-    h3 { text-align: center; color: #0066cc; }
-    a { color: #0066cc; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-    p { line-height: 1.3em;}
-    
-    
-    /* demo css */
-    .target1 {
-      background-color: blue;
-      border: 1px solid black;
-      width: 100px;
-      color: white;
-    }
-    .target2 li{
-      margin-top: 5px;
-      background-color: pink;
-      border: 1px solid red;
-    }
-    
-    
-    /* all context menus has this class */
-    .context-menu {
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius: 4px;
-      
-      background-color: #f2f2f2;
-      border: 1px solid #999;
-      
-      list-style: none;
-      margin: 0; padding: 0;        
-    }
-    .context-menu a {
-      display: block;
-      padding: 3px;
-      text-decoration: none;
-      color: #333;
-    }
-    .context-menu a:hover {
-      background-color: #666;
-      color: white;
-    }
-    
-    
-    /* second context menu */
-    #context-menu-2 {
-      border: 1px solid #333;
-      background-color: orange;
-      margin: 0; padding: 0;
-    }
-	</style>
-	
-</head>
+		<title>jQuery Context Menu</title>
 
-<body>
-  <a href="http://github.com/arnklint/jquery-contextMenu"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/arnklint/jquery-contextMenu/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/arnklint/jquery-contextMenu/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/arnklint/jquery-contextMenu">jQuery contextMenu</a>
-      <span class="small">by <a href="http://github.com/arnklint">arnklint</a></span></h1>
-
-    <div class="description">
-      Simple, small, yet powerfull and easy to use context menu when right clicking on something for jQuery. :)
-      
-      <a href="http://github.com/arnklint/jquery-contextMenu">Documentation</a>
-    </div>
-    
-    <div class="demo">
-      <h2>Example 1</h2>
-      <p>Lets look at a single div as a target</p>
-
-      <p>Note that the native context menu is disabled by passing {disable_native_context_menu: true} as the options hash and last argument of the plugin. The native context menu is enabled by default.</p>
-
-      <div class="target1">Click me!</div>
-
-      <h2>Example 2 - multiple targets and a different context menu</h2>
-      <p>You can use the same syntax, but use any other selector to target multiple elements with the same context menu</p>
-
-      <ul class="target2">
-        <li>Click me!</li>
-        <li>Click me!</li>
-        <li>Click me!</li>            
-      </ul>
-    </div>
-
-    <h2>License</h2>
-<p>Copyright (c) 2010 <a href="http://starksignal.se">Jonas Arnklint</a>, released under the MIT license.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-<h2>Authors</h2>
-<p>Jonas Arnklint (jonas.arnklint@gmail.com)
-<br/>
-<br/>      </p>
-<h2>Contact</h2>
-<p>Jonas Arnklint (jonas.arnklint@gmail.com)
-<br/>      </p>
+		<style type="text/css">
+			body {
+				margin-top: 1.0em;
+				background-color: #f2f2f2;
+				font-family: Helvetica, Arial;
+				color: #333;
+			}
+			#container {
+				margin: 0 auto;
+				width: 700px;
+			}
+			h1 { font-size: 3.0em; color: #f4c05e; margin-bottom: 3px; }
+			h1 .small { font-size: 0.4em; }
+			h1 a { text-decoration: none }
+			h2 { font-size: 1.5em; color: #0066cc; }
+			h3 { text-align: center; color: #0066cc; }
+			a { color: #0066cc; }
+			.description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+			.download { float: right; }
+			pre { background: #000; color: #fff; padding: 15px;}
+			hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+			.footer { text-align:center; padding-top:30px; font-style: italic; }
+			p { line-height: 1.3em;}
 
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/arnklint/jquery-contextMenu/zipball/master">zip</a> or
-      <a href="http://github.com/arnklint/jquery-contextMenu/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/arnklint/jquery-contextMenu</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/arnklint/jquery-contextMenu">arnklint/jquery-contextMenu</a>
-    </div>
-
-  </div>
-
-        
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script src="http://github.com/arnklint/jquery-contextMenu/raw/master/jquery.contextMenu.js"></script>
-
-    <script type="text/javascript" charset="utf-8">
-      $(document).ready(function(){
-
-        $('.target1').contextMenu('context-menu-1', {
-            'Context Menu Item 1': {
-                click: function(element){  // element is the jquery obj clicked on when context menu launched
-                    alert('Menu item 1 clicked');
-                    element.css({backgroundColor: 'pink'}); // just as example the clicked items backgorund is changed
-                },
-                klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
-            },
-            'Second menu item': {
-                click: function(element){ alert('second clicked'); },
-                klass: "second-menu-item"
-            }
-        });
+			/* demo css */
+			.target1 {
+				background-color: blue;
+				border: 1px solid black;
+				width: 100px;
+				color: white;
+			}
+			.target2 li{
+				margin-top: 5px;
+				background-color: pink;
+				border: 1px solid red;
+			}
 
 
-        $('.target2 li').contextMenu('context-menu-2', {
-            'Color me green!': {
-                click: function(element){  // element is the jquery obj clicked on when context menu launched
-                    element.css({backgroundColor: 'green', color: 'black'})
-                },
-                klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
-            },
-            'Make me big!': {
-                click: function(element){ element.css({fontSize: '25px'}) },
-                klass: "second-menu-item"
-            }
-        }, {disable_native_context_menu: true});
-      });
-    </script>
+			/* all context menus has this class */
+			.context-menu {
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
 
-  
+				background-color: #f2f2f2;
+				border: 1px solid #999;
+
+				list-style: none;
+				margin: 0; padding: 0;        
+			}
+			.context-menu a {
+				display: block;
+				padding: 3px;
+				text-decoration: none;
+				color: #333;
+			}
+			.context-menu a:hover {
+				background-color: #666;
+				color: white;
+			}
+
+
+			/* second context menu */
+			#context-menu-2 {
+				border: 1px solid #333;
+				background-color: orange;
+				margin: 0; padding: 0;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<a href="http://github.com/arnklint/jquery-contextMenu"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+		<div id="container">
+
+			<div class="download">
+				<a href="http://github.com/arnklint/jquery-contextMenu/zipball/master">
+					<img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+				<a href="http://github.com/arnklint/jquery-contextMenu/tarball/master">
+					<img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+			</div>
+
+			<h1><a href="http://github.com/arnklint/jquery-contextMenu">jQuery contextMenu</a>
+				<span class="small">by <a href="http://github.com/arnklint">arnklint</a></span></h1>
+
+			<div class="description">
+				Simple, small, yet powerfull and easy to use context menu when right clicking on something for jQuery. 
+
+				<a href="http://github.com/arnklint/jquery-contextMenu">Documentation</a>
+			</div>
+
+			<div class="demo">
+				<h2>Example 1</h2>
+				<p>Lets look at a single div as a target</p>
+
+				<p>Note that the native context menu is disabled by passing {disable_native_context_menu: true} as the options hash and last argument of the plugin. The native context menu is enabled by default.</p>
+
+				<div class="target1">Click me!</div>
+
+				<h2>Example 2 - multiple targets and a different context menu</h2>
+				<p>You can use the same syntax, but use any other selector to target multiple elements with the same context menu</p>
+
+				<ul class="target2">
+					<li>Click me!</li>
+					<li>Click me!</li>
+					<li>Click me!</li>            
+				</ul>
+			</div>
+
+			<h2>Authors</h2>
+			<p><a href="https://github.com/arnklint">Jonas Arnklint</a></p>
+			<p><a href="https://github.com/evanworley">Evan Worley</a></p>
+
+			<h2>Download</h2>
+			<p>
+			You can download this project in either
+			<a href="http://github.com/arnklint/jquery-contextMenu/zipball/master">zip</a> or
+			<a href="http://github.com/arnklint/jquery-contextMenu/tarball/master">tar</a> formats.
+			</p>
+			<p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+			by running:
+			<pre>$ git clone git://github.com/arnklint/jquery-contextMenu</pre>
+			</p>
+
+			<div class="footer">
+				get the source code on GitHub : <a href="http://github.com/arnklint/jquery-contextMenu">arnklint/jquery-contextMenu</a>
+			</div>
+
+			<h2>License</h2>
+			<p>Copyright (c) 2010 <a href="http://starksignal.se">Jonas Arnklint</a>, released under the MIT license.
+
+			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+			The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+			THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+		</div>
+
+
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script src="http://github.com/arnklint/jquery-contextMenu/raw/master/jquery.contextMenu.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){
+
+					$('.target1').contextMenu('context-menu-1', {
+						'Context Menu Item 1': {
+click: function(element){  // element is the jquery obj clicked on when context menu launched
+alert('Menu item 1 clicked');
+element.css({backgroundColor: 'pink'}); // just as example the clicked items backgorund is changed
+},
+klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
+},
+'Second menu item': {
+click: function(element){ alert('second clicked'); },
+klass: "second-menu-item"
+}
+});
+
+
+					$('.target2 li').contextMenu('context-menu-2', {
+						'Color me green!': {
+click: function(element){  // element is the jquery obj clicked on when context menu launched
+element.css({backgroundColor: 'green', color: 'black'})
+},
+klass: "menu-item-1" // a custom css class for this menu item (usable for styling)
+},
+'Make me big!': {
+click: function(element){ element.css({fontSize: '25px'}) },
+klass: "second-menu-item"
+}
+}, {disable_native_context_menu: true});
+});
+</script>
+
+
 </body>
 </html>

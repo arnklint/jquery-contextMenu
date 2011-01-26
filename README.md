@@ -4,6 +4,8 @@ jQuery plugin that shows a custom context menu when right clicking something. Su
 
 The best way to try it out is to try a demo is to go [here](http://arnklint.github.com/jquery-contextMenu/) or download the source and open test.html.
 
+For questions, either [follow me](http://twitter.com/arnklint) on twitter or post an issue here.
+
 ## Basic calling syntax: 
 
     // context_menu_id becomes the id of the context menu, context_menu_items contains the items to be shown in the menu, and options is a set of options for this menu

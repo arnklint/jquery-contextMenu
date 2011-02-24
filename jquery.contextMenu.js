@@ -13,11 +13,12 @@
       var me = this,
           menu = $('<ul id="'+name+'" class="context-menu"></ul>').hide().appendTo('body'),
           active_element = null, // last clicked element that responds with contextMenu
-          hide_menu = function(){
+          hide_menu = function() {
             $('.context-menu').each(function() {
               $(this).trigger("closed");
               $(this).hide();
             });
+            $('body').unbind('click', hide_menu);
           }, 
           default_options = {
               disable_native_context_menu: false // disables the native contextmenu everywhere you click
@@ -42,9 +43,6 @@
           });
       });
 
-      $('body').click(function() {
-           hide_menu(); //Hide the menus if visible
-      });
 
       return me.bind('contextmenu', function(e){
           // Hide any existing context menus
@@ -53,23 +51,22 @@
           active_element = $(this); // set clicked element
 
           if (options.showMenu) {
-            options.showMenu.call(menu, active_element);
+              options.showMenu.call(menu, active_element);
           }
 
           // Bind to the closed event if there is a hideMenu handler specified
           if (options.hideMenu) {
-            menu.bind("closed", function() {
-              options.hideMenu.call(menu, active_element);
-            });
+              menu.bind("closed", function() {
+                  options.hideMenu.call(menu, active_element);
+              });
           }
 
-          menu.show()
-              .css({
-                  position: 'absolute', 
-                  top: e.pageY, 
-                  left: e.pageX, 
-                  zIndex: 1000 
-              });
+          menu.show(0, function() { $('body').bind('click', hide_menu); }).css({
+            position: 'absolute', 
+            top: e.pageY, 
+            left: e.pageX, 
+            zIndex: 1000 
+          });
           return false;
       });
   }

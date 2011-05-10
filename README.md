@@ -75,6 +75,9 @@ Simple, yet powerful.
 
   Evan Worley [https://github.com/evanworley](https://github.com/evanworley)
 
+  Marc-Andre Ferland
+[http://madrang.blogspot.com/](http://madrang.blogspot.com/)
+
 ## License
 
 Copyright (c) 2010 [Jonas Arnklint](http://fkw.se), released under the MIT license.

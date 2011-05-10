@@ -62,6 +62,10 @@ In the example above, when a user clicks on the first context menu item, the ori
 Simple, yet powerful. 
 
 ## Version History
+  Version 1.4
+    Added support for window boundaries, making the menu always stay
+    inside them no matter where you click.
+
   Version 1.3
     Added callbacks showMenu and hideMenu to allow the caller to perform actions when the menu is shown 
     and hidden (such as custom styling of the menu target)

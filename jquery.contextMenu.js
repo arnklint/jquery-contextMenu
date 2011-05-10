@@ -63,12 +63,24 @@
         });
       }
 
+      menu.css({
+        visibility: 'hidden',
+        position: 'absolute',
+        zIndex: 1000
+      });
+
+      // include margin so it can be used to offset from page border.
+      var mWidth = menu.outerWidth(true),
+        mHeight = menu.outerHeight(true),
+        xPos = ((e.pageX - window.scrollX) + mWidth < window.innerWidth) ? e.pageX : e.pageX - mWidth,
+        yPos = ((e.pageY - window.scrollY) + mHeight < window.innerHeight) ? e.pageY : e.pageY - mHeight;
+
       menu.show(0, function() {
         $('body').bind('click', hideMenu);
       }).css({
-        position: 'absolute',
-        top: e.pageY,
-        left: e.pageX,
+        visibility: 'visible',
+        top: yPos + 'px',
+        left: xPos + 'px',
         zIndex: 1000
       });
       return false;

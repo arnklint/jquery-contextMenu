@@ -14,9 +14,11 @@
     menu = $('<ul id="'+name+'" class="context-menu"></ul>').hide().appendTo('body'),
     activeElement = null, // last clicked element that responds with contextMenu
     hideMenu = function() {
-      $(this).trigger("closed");
-      $(this).hide();
-      $('body').unbind('click', hideMenu);
+      $('.context-menu:visible').each(function() {
+        $(this).trigger("closed");
+        $(this).hide();
+        $('body').unbind('click', hideMenu);
+      });
     },
     default_options = {
       disable_native_context_menu: false // disables the native contextmenu everywhere you click
@@ -61,7 +63,9 @@
         });
       }
 
-      menu.show(0, function() { $('body').bind('click', hideMenu); }).css({
+      menu.show(0, function() {
+        $('body').bind('click', hideMenu);
+      }).css({
         position: 'absolute',
         top: e.pageY,
         left: e.pageX,
@@ -71,3 +75,4 @@
     });
   }
 })(jQuery);
+

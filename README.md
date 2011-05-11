@@ -28,7 +28,9 @@ A complete example:
         {
           disable_native_context_menu: true,
           showMenu: function() { alert("Showing menu"); },
-          hideMenu: function() { alert("Hiding menu"); }
+          hideMenu: function() { alert("Hiding menu"); },
+          leftClick: true // trigger on left click instead of right
+click
         }
     });
     
@@ -62,17 +64,22 @@ In the example above, when a user clicks on the first context menu item, the ori
 Simple, yet powerful. 
 
 ## Version History
-  Version 1.4
-    Added support for window boundaries, making the menu always stay
-    inside them no matter where you click.
 
-  Version 1.3
-    Added callbacks showMenu and hideMenu to allow the caller to perform actions when the menu is shown 
-    and hidden (such as custom styling of the menu target)
+### Version 1.5
+Left click mode added. Trigger the menu on left click instead of right
+click. 
 
-  Version 1.2
-    Added an option to disable the browsers native context menu no matter where you click: 
-    $('selector').contextMenu('context-menu-name', actions, { disable_native_context_menu: true })
+### Version 1.4
+Added support for window boundaries, making the menu always stay
+inside them no matter where you click.
+
+### Version 1.3
+Added callbacks showMenu and hideMenu to allow the caller to perform actions when the menu is shown 
+and hidden (such as custom styling of the menu target)
+
+### Version 1.2
+Added an option to disable the browsers native context menu no matter where you click: 
+$('selector').contextMenu('context-menu-name', actions, { disable_native_context_menu: true })
 
 ## CONTRIBUTORS:
   Jonas Arnklint [https://github.com/arnklint](https://github.com/arnklint)

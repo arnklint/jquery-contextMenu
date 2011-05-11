@@ -90,15 +90,15 @@
     </p>
     <div class="target1">Right-click me!</div>
     
-    <h2>Example 2 - multiple targets and a different context menu</h2>
+    <h2>Example 2 - multiple targets triggered on left click</h2>
     <p>
       You can use the same syntax, but use any other selector to target multiple elements 
       with the same context menu.
     </p>
     <ul class="target2">
-      <li>Right click me!</li>
-      <li>Right click me!</li>
-      <li>Right click me!</li>            
+      <li>Left click me!</li>
+      <li>Left click me!</li>
+      <li>Left click me!</li>            
     </ul>
 
     <h2>Example 3 - highlight current target</h2>
@@ -142,7 +142,7 @@
                 click: function(element) { element.addClass('big-font') },
                 klass: "second-menu-item"
             }
-        }, { disable_native_context_menu: true, }
+        }, { disable_native_context_menu: true, leftClick: true }
         );
 
         $('.target3 li').contextMenu('context-menu-2', {

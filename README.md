@@ -24,15 +24,15 @@ A complete example:
         'Second menu item': {
             click: function(element){ alert('second clicked'); },
             klass: "custom-class2"
-        },
-        {
-          disable_native_context_menu: true,
-          showMenu: function() { alert("Showing menu"); },
-          hideMenu: function() { alert("Hiding menu"); },
-          leftClick: true // trigger on left click instead of right
-click
         }
-    });
+      },
+      {
+        disable_native_context_menu: true,
+        showMenu: function() { alert("Showing menu"); },
+        hideMenu: function() { alert("Hiding menu"); },
+        leftClick: true // trigger on left click instead of right click
+      }
+    );
     
 
 ## Markup, and css

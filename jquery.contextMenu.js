@@ -11,6 +11,7 @@
 (function($) {
   jQuery.fn.contextMenu = function ( name, actions, options ) {
     var me = this,
+    win = $(window),
     menu = $('<ul id="'+name+'" class="context-menu"></ul>').hide().appendTo('body'),
     activeElement = null, // last clicked element that responds with contextMenu
     hideMenu = function() {
@@ -46,12 +47,22 @@
       });
     });
 
+    // fix for ie mouse button bug
+    var mouseEvent = 'contextmenu click';
+    if ($.browser.msie && options.leftClick) {
+      mouseEvent = 'click';
+    } else if ($.browser.msie && !options.leftClick) {
+      mouseEvent = 'contextmenu';
+    }
 
-    return me.bind('contextmenu click', function(e){
+    return me.bind(mouseEvent, function(e){
       // Hide any existing context menus
       hideMenu();
 
-      if( (options.leftClick && e.button == 0) || (options.leftClick == false && e.button == 2) ){
+      var correctButton = ( (options.leftClick && e.button == 0) || (options.leftClick == false && e.button == 2) );
+      if ($.browser.msie) correctButton = true;
+
+      if( correctButton ){
 
         activeElement = $(this); // set clicked element
 
@@ -75,8 +86,8 @@
         // include margin so it can be used to offset from page border.
         var mWidth = menu.outerWidth(true),
           mHeight = menu.outerHeight(true),
-          xPos = ((e.pageX - window.scrollX) + mWidth < window.innerWidth) ? e.pageX : e.pageX - mWidth,
-          yPos = ((e.pageY - window.scrollY) + mHeight < window.innerHeight) ? e.pageY : e.pageY - mHeight;
+          xPos = ((e.pageX - win.scrollLeft()) + mWidth < win.width()) ? e.pageX : e.pageX - mWidth,
+          yPos = ((e.pageY - win.scrollTop()) + mHeight < win.height()) ? e.pageY : e.pageY - mHeight;
 
         menu.show(0, function() {
           $('body').bind('click', hideMenu);

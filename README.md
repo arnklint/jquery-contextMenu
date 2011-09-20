@@ -65,6 +65,10 @@ Simple, yet powerful.
 
 ## Version History
 
+### Version 1.6
+Added IE8 compability. Thanks to
+[TheRealAnaconda](https://github.com/TheRealAnaconda) the nice work!
+
 ### Version 1.5
 Left click mode added. Trigger the menu on left click instead of right
 click. 

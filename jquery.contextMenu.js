@@ -35,7 +35,13 @@
     });
 
     $.each(actions, function(me, itemOptions) {
-      var menuItem = $('<li><a href="#">'+me+'</a></li>');
+      if (itemOptions.link) {
+        var link = itemOptions.link;  
+      } else {
+        var link = '<a href="#">'+me+'</a>';  
+      } 
+      
+      var menuItem = $('<li>' + link + '</li>');
 
       if (itemOptions.klass) {
         menuItem.attr("class", itemOptions.klass);

@@ -1,10 +1,10 @@
 # jQuery context menu
 
-jQuery plugin that shows a custom context menu when right clicking something. Super simple implementation.
+jQuery plugin that shows a custom context menu when right clicking something. Super simple implementation. Used to modify visualization of the form analytics metrics for [RevRise Form Analytics](http://revrise.com "Web Form Analytic tool"), but can be used in pretty much any context as long as jQuery is present.
 
-The best way to try it out is to try a demo is to go [here](http://arnklint.github.com/jquery-contextMenu/) or download the source and open test.html.
+The best way to try it out is to try a demo is to go [here](http://arnklint.github.com/jquery-contextMenu/ "Demoing context menu") or download the source and open test.html.
 
-For questions, either [follow me](http://twitter.com/arnklint) on twitter or post an issue here.
+For questions, either [follow me](http://twitter.com/arnklint "Follow Jonas Arnklint") on twitter or post an issue here.
 
 ## Basic calling syntax: 
 

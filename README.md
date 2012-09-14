@@ -93,7 +93,7 @@ $('selector').contextMenu('context-menu-name', actions, { disable_native_context
 
 ## License
 
-Copyright (c) 2010 [Jonas Arnklint](http://fkw.se), released under the MIT license.
+Copyright (c) 2010 [Jonas Arnklint](http://arnklint.com), released under the MIT license.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

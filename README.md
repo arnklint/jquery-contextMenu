@@ -92,6 +92,8 @@ $('selector').contextMenu('context-menu-name', actions, { disable_native_context
   Marc-Andre Ferland
 [http://madrang.blogspot.com/](http://madrang.blogspot.com/)
 
+  Soetji Anto
+
 ## License
 
 Copyright (c) 2010 [Jonas Arnklint](http://arnklint.com), released under the MIT license.

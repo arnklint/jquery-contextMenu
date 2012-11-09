@@ -4,7 +4,7 @@
  * Released into the public domain
  * Date: Jan 14, 2011
  * @author Jonas Arnklint
- * @version 1.3
+ * @version 1.7
  *
 */
 // Making a local '$' alias of jQuery to support jQuery.noConflict
@@ -60,8 +60,8 @@
     } else if ($.browser.msie && !options.leftClick) {
       mouseEvent = 'contextmenu';
     }
-
-    return me.bind(mouseEvent, function(e){
+    
+    var mouseEventFunc = function(e){
       // Hide any existing context menus
       hideMenu();
 
@@ -106,7 +106,13 @@
 
         return false;
       }
-    });
+    }
+
+    if (options.delegateEventTo) {
+      return me.on(mouseEvent, options.delegateEventTo, mouseEventFunc)
+    } else {
+      return me.bind(mouseEvent, mouseEventFunc);
+    }
   }
 })(jQuery);
 

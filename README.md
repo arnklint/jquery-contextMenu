@@ -24,7 +24,8 @@ A complete example:
             klass: "custom-class2"
         }
       },
-      {
+      { 
+        delegateEventTo: 'childrenSelector',
         disable_native_context_menu: true,
         showMenu: function() { alert("Showing menu"); },
         hideMenu: function() { alert("Hiding menu"); },

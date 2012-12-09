@@ -36,11 +36,11 @@
 
     $.each(actions, function(me, itemOptions) {
       if (itemOptions.link) {
-        var link = itemOptions.link;  
+        var link = itemOptions.link;
       } else {
-        var link = '<a href="#">'+me+'</a>';  
-      } 
-      
+        var link = '<a href="#">'+me+'</a>';
+      }
+
       var menuItem = $('<li>' + link + '</li>');
 
       if (itemOptions.klass) {
@@ -60,7 +60,7 @@
     } else if ($.browser.msie && !options.leftClick) {
       mouseEvent = 'contextmenu';
     }
-    
+
     var mouseEventFunc = function(e){
       // Hide any existing context menus
       hideMenu();

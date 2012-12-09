@@ -94,6 +94,8 @@ $('selector').contextMenu('context-menu-name', actions, { disable_native_context
 
   Soetji Anto
 
+  Jonny Strömberg [https://github.com/javve](https://github.com/javve)
+
 ## License
 
 Copyright (c) 2010 [Jonas Arnklint](http://arnklint.com), released under the MIT license.

@@ -1,6 +1,6 @@
 {
   "name": "context-menu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "title": "jQuery Context Menu",
   "author": {
     "name": "Jonas Arnklint",
@@ -17,9 +17,9 @@
   "description": "Simple, small, yet powerfull and easy to use jQuery context menu for right / left clicking on something.",
   "keywords": [
     "menu",
-    "context menu",
+    "context-menu",
     "context",
-    "right click menu",
+    "right-click-menu",
     "navigation"
   ],
   "homepage": "https://github.com/arnklint/jquery-contextMenu",

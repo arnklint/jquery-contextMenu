@@ -89,12 +89,13 @@ $('selector').contextMenu('context-menu-name', actions, { disable_native_context
 
   Evan Worley [https://github.com/evanworley](https://github.com/evanworley)
 
-  Marc-Andre Ferland
-[http://madrang.blogspot.com/](http://madrang.blogspot.com/)
+  Marc-Andre Ferland [http://madrang.blogspot.com/](http://madrang.blogspot.com/)
 
   Soetji Anto
 
   Jonny Strömberg [https://github.com/javve](https://github.com/javve)
+  
+  Thomas Jakobi [https://github.com/Jako](https://github.com/Jako)
 
 ## License
 

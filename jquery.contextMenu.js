@@ -19,6 +19,7 @@
         $(this).trigger("closed");
         $(this).hide();
         $('body').unbind('click', hideMenu);
+        menu.unbind('closed');
       });
     },
     default_options = {

@@ -53,59 +53,51 @@
       });
     });
 
-    // fix for ie mouse button bug
-    var mouseEvent = 'contextmenu click';
-    if ($.browser.msie && options.leftClick) {
-      mouseEvent = 'click';
-    } else if ($.browser.msie && !options.leftClick) {
-      mouseEvent = 'contextmenu';
+    if (options.leftClick) {
+      var mouseEvent = 'click';
+    } else {
+      var mouseEvent = 'contextmenu';
     }
     
     var mouseEventFunc = function(e){
       // Hide any existing context menus
       hideMenu();
 
-      var correctButton = ( (options.leftClick && e.button == 0) || (options.leftClick == false && e.button == 2) );
-      if ($.browser.msie) correctButton = true;
+      activeElement = $(this); // set clicked element
 
-      if( correctButton ){
-
-        activeElement = $(this); // set clicked element
-
-        if (options.showMenu) {
-          options.showMenu.call(menu, activeElement);
-        }
-
-        // Bind to the closed event if there is a hideMenu handler specified
-        if (options.hideMenu) {
-          menu.bind("closed", function() {
-            options.hideMenu.call(menu, activeElement);
-          });
-        }
-
-        menu.css({
-          visibility: 'hidden',
-          position: 'absolute',
-          zIndex: 1000
-        });
-
-        // include margin so it can be used to offset from page border.
-        var mWidth = menu.outerWidth(true),
-          mHeight = menu.outerHeight(true),
-          xPos = ((e.pageX - win.scrollLeft()) + mWidth < win.width()) ? e.pageX : e.pageX - mWidth,
-          yPos = ((e.pageY - win.scrollTop()) + mHeight < win.height()) ? e.pageY : e.pageY - mHeight;
-
-        menu.show(0, function() {
-          $('body').bind('click', hideMenu);
-        }).css({
-          visibility: 'visible',
-          top: yPos + 'px',
-          left: xPos + 'px',
-          zIndex: 1000
-        });
-
-        return false;
+      if (options.showMenu) {
+        options.showMenu.call(menu, activeElement);
       }
+
+      // Bind to the closed event if there is a hideMenu handler specified
+      if (options.hideMenu) {
+        menu.bind("closed", function() {
+          options.hideMenu.call(menu, activeElement);
+        });
+      }
+
+      menu.css({
+        visibility: 'hidden',
+        position: 'absolute',
+        zIndex: 1000
+      });
+
+      // include margin so it can be used to offset from page border.
+      var mWidth = menu.outerWidth(true),
+        mHeight = menu.outerHeight(true),
+        xPos = ((e.pageX - win.scrollLeft()) + mWidth < win.width()) ? e.pageX : e.pageX - mWidth,
+        yPos = ((e.pageY - win.scrollTop()) + mHeight < win.height()) ? e.pageY : e.pageY - mHeight;
+
+      menu.show(0, function() {
+        $('body').bind('click', hideMenu);
+      }).css({
+        visibility: 'visible',
+        top: yPos + 'px',
+        left: xPos + 'px',
+        zIndex: 1000
+      });
+
+      return false;
     }
 
     if (options.delegateEventTo) {

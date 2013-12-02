@@ -24,6 +24,7 @@
       });
     },
     default_options = {
+      shiftDisable : false, // Allow access to native contextMenu by rightclick + shift
       disable_native_context_menu: false, // disables the native contextmenu everywhere you click
       leftClick: false // show menu on left mouse click instead of right
     },
@@ -62,6 +63,11 @@
     }
 
     var mouseEventFunc = function(e){
+      
+      if (options.shiftDisable && e.shiftKey) {
+        return true
+      }
+      
       // Hide any existing context menus
       hideMenu();
 

@@ -14,6 +14,7 @@
     win = $(window),
     menu = $('<ul id="'+name+'" class="context-menu"></ul>').hide().appendTo('body'),
     activeElement = null, // last clicked element that responds with contextMenu
+    originalEvent = null, // the original contextmenu event
     hideMenu = function() {
       $('.context-menu:visible').each(function() {
         $(this).trigger("closed");
@@ -49,7 +50,7 @@
       }
 
       menuItem.appendTo(menu).bind('click', function(e) {
-        itemOptions.click(activeElement);
+        itemOptions.click(activeElement, originalEvent);
         e.preventDefault();
       });
     });
@@ -65,6 +66,7 @@
       hideMenu();
 
       activeElement = $(this); // set clicked element
+      originalEvent = e; // Store the original context menu event
 
       if (options.showMenu) {
         options.showMenu.call(menu, activeElement);

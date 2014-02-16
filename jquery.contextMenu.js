@@ -14,6 +14,7 @@
     win = $(window),
     menu = $('<ul id="'+name+'" class="context-menu"></ul>').hide().appendTo('body'),
     activeElement = null, // last clicked element that responds with contextMenu
+    originalEvent = null, // the original contextmenu event
     hideMenu = function() {
       $('.context-menu:visible').each(function() {
         $(this).trigger("closed");
@@ -23,6 +24,7 @@
       });
     },
     default_options = {
+      shiftDisable : false, // Allow access to native contextMenu by rightclick + shift
       disable_native_context_menu: false, // disables the native contextmenu everywhere you click
       leftClick: false // show menu on left mouse click instead of right
     },
@@ -49,7 +51,7 @@
       }
 
       menuItem.appendTo(menu).bind('click', function(e) {
-        itemOptions.click(activeElement);
+        itemOptions.click(activeElement, originalEvent);
         e.preventDefault();
       });
     });
@@ -61,10 +63,16 @@
     }
 
     var mouseEventFunc = function(e){
+      
+      if (options.shiftDisable && e.shiftKey) {
+        return true
+      }
+      
       // Hide any existing context menus
       hideMenu();
 
       activeElement = $(this); // set clicked element
+      originalEvent = e; // Store the original context menu event
 
       if (options.showMenu) {
         options.showMenu.call(menu, activeElement);

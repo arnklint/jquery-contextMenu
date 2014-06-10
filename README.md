@@ -96,6 +96,8 @@ $('selector').contextMenu('context-menu-name', actions, { disable_native_context
   Jonny Strömberg [https://github.com/javve](https://github.com/javve)
   
   Thomas Jakobi [https://github.com/Jako](https://github.com/Jako)
+  
+  HitkoDev [https://github.com/HitkoDev](https://github.com/HitkoDev)
 
 ## License
 

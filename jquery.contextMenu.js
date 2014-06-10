@@ -37,6 +37,10 @@
       hideMenu();
     });
 
+    $(window).bind('blur', function () {
+      hideMenu();
+    });
+
     $.each(actions, function(me, itemOptions) {
       if (itemOptions.link) {
         var link = itemOptions.link;

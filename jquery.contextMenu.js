@@ -51,7 +51,7 @@
       var menuItem = $('<li>' + link + '</li>');
 
       if (itemOptions.klass) {
-        menuItem.attr("class", itemOptions.klass);
+        menuItem.addClass(itemOptions.klass);
       }
 
       menuItem.appendTo(menu).bind('click', function(e) {

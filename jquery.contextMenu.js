@@ -26,7 +26,8 @@
     default_options = {
       shiftDisable : false, // Allow access to native contextMenu by rightclick + shift
       disable_native_context_menu: false, // disables the native contextmenu everywhere you click
-      leftClick: false // show menu on left mouse click instead of right
+      leftClick: false, // show menu on left mouse click instead of right
+      jqui: false // enable integration with jQuery-UI
     },
     options = $.extend(default_options, options);
 
@@ -47,11 +48,15 @@
       } else {
         var link = '<a href="#">'+me+'</a>';
       }
+      
+      if (itemOptions.icon && options.jqui) {
+        link = '<span class="ui-icon ' + itemOptions.icon + '"></span>' + link;
+        }
 
       var menuItem = $('<li>' + link + '</li>');
 
       if (itemOptions.klass) {
-        menuItem.attr("class", itemOptions.klass);
+        menuItem.addClass(itemOptions.klass);
       }
 
       menuItem.appendTo(menu).bind('click', function(e) {
@@ -103,6 +108,7 @@
 
       menu.show(0, function() {
         $('body').bind('click', hideMenu);
+        if (options.jqui){$('.context-menu').menu();}
       }).css({
         visibility: 'visible',
         top: yPos + 'px',

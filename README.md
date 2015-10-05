@@ -15,7 +15,7 @@ A complete example:
         'Context Menu Item 1': {
             click: function(element){  // element is the jquery obj clicked on when context menu launched
                 alert('Menu item 1 clicked');
-                element.css({backgroundColor: 'pink'}); // just as example the clicked items backgorund is changed
+                element.css({backgroundColor: 'pink'}); // just as example the clicked items background is changed
             },
             klass: "custom-class1" // a custom css class for this menu item (usable for styling)
         },
